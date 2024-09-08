@@ -10,11 +10,15 @@ python = "3.10.4"
 django = "5.1.1"
 black = "^24.8.0"
 django-stubs = "^5.0.4"
+pymysql = "^1.1.1"
+cryptography = "^43.0.1"
 
 [tool.poetry.group.dev.dependencies]
 isort = "^5.13.2"
 black = "^24.8.0"
 mypy = "^1.11.2"
+types-pymysql = "^1.1.0.20240524"
+coverage = "^7.6.1"
 
 [tool.black]
 line-length = 120
@@ -38,6 +42,19 @@ ignore_errors = true
 [tool.django-stubs]
 django_settings_module = "config.settings"
 
+[tool.coverage.report]
+# 테스트 80퍼 이상이면 통과
+fail_under = 80
+
+[tool.coverage.run]
+# 테스트 제외
+omit = [
+  ".mypy_cache/**/*",
+  "*/migrations/*",
+  "*/*test*.py",
+]
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
