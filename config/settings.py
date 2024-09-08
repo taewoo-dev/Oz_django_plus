@@ -77,12 +77,13 @@ WSGI_APPLICATION = "config.wsgi.application"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 pymysql.install_as_MySQLdb()
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "oz_django",
         "USER": "root",
-        "PASSWORD": "1520528a",
+        "PASSWORD": "rlaxodn123!!",
         "HOST": "localhost",
         "PORT": "3306",
     }
